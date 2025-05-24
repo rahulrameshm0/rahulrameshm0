@@ -44,7 +44,7 @@
 
 ## 🧠 LeetCode Stats:
 
-<img src="https://leetcard.jacoblin.cool/rahulrameshm0?theme=dark&font=Karma&ext=activity" />
+<img src="[https://leetcard.jacoblin.cool/rahulrameshm0?theme=dark&font=Karma&ext=activity](https://leetcode.com/u/OreF2LOBST/)" />
 
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
