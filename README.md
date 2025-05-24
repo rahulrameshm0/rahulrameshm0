@@ -28,13 +28,10 @@
     <td>
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" />
     </td>
-  </tr>
-  <tr>
-    <td >
+          <td >
  <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" />
     </td>
   </tr>
-    
 </table>
 
 
