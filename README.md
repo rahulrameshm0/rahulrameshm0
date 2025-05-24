@@ -42,4 +42,9 @@
 ---
 [![](https://visitcount.itsvg.in/api?id=rahulrameshm0&icon=6&color=0)](https://visitcount.itsvg.in)
 
+## 🧠 LeetCode Stats:
+
+<img src="https://leetcard.jacoblin.cool/rahulrameshm0?theme=dark&font=Karma&ext=activity" />
+
+
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
