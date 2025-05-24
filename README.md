@@ -21,8 +21,6 @@
 ![](https://nirzak-streak-stats.vercel.app/?user=rahulrameshm0&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=rahulrameshm0&theme=radical&no-frame=true&no-bg=false&margin-w=4)
 
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=rahulrameshm0&limit=5&theme=dark&combine_all_yearly_contributions=true)
