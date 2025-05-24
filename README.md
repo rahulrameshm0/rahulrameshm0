@@ -13,7 +13,7 @@
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/rahul-ramesh-86a564325/)  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:rahulrameshm98@gmail.com) 
-## 📊 GitHub Stats:
+## 📈 Coding Activity & Stats
 
 <table>
   <tr>
@@ -25,14 +25,17 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td colspan="2">
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" />
     </td>
-          <td >
- <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" />
+  </tr>
+  <tr>
+    <td colspan="2">
+      <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" />
     </td>
   </tr>
 </table>
+
 
 
 
