@@ -10,4 +10,3 @@
 🎯 Currently, I'm focused on mastering full-stack development and deepening my knowledge in backend architecture and database design.
 
 📫 Feel free to check out my repositories and connect with me!
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=rahulrameshm0)](https://github.com/anuraghazra/github-readme-stats)
