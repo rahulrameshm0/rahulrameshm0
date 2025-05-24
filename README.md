@@ -25,10 +25,16 @@
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td>
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" />
     </td>
   </tr>
+  <tr>
+    <td >
+ <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" />
+    </td>
+  </tr>
+    
 </table>
 
 
@@ -41,10 +47,5 @@
 
 ---
 [![](https://visitcount.itsvg.in/api?id=rahulrameshm0&icon=6&color=0)](https://visitcount.itsvg.in)
-
-## 🧠 LeetCode Stats:
-
-<img src="[https://leetcard.jacoblin.cool/rahulrameshm0?theme=dark&font=Karma&ext=activity](https://leetcode.com/u/OreF2LOBST/)" />
-
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
