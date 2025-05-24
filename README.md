@@ -35,7 +35,7 @@
     <td align="center" width="50%">
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" width="90%" />
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="100%">
       <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" width="90%" />
     </td>
   </tr>
