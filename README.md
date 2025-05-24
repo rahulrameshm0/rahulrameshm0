@@ -1,3 +1,8 @@
-- 👋 Hi, I’m @rahulrameshm0
-- I'm a self-taught Python full-stack developer with experience in HTML, CSS, and JavaScript, along with backend development using Python, Flask, Django, and databases. I've built frontend web pages and developed basic Python projects. Passionate about learning, improving my skills, and building real-world applications.
+👋 Hi, I’m Rahul
+💻 I'm a self-taught Python Full-Stack Developer with hands-on experience in building web applications using Python, Django, HTML, CSS, JavaScript, and modern frameworks like Tailwind and Bootstrap.
+🌐 I’ve developed both frontend and backend components of real-world projects, and I’m passionate about creating clean, responsive, and user-friendly interfaces.
+🚀 I'm always eager to learn new technologies, improve my coding skills, and contribute to impactful projects.
+🎯 Currently, I'm focused on mastering full-stack development and deepening my knowledge in backend architecture and database design.
+
+📫 Feel free to check out my repositories and connect with me!
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=rahulrameshm0)](https://github.com/anuraghazra/github-readme-stats)
