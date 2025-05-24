@@ -15,26 +15,30 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/rahul-ramesh-86a564325/)  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:rahulrameshm98@gmail.com) 
 ## 📈 Coding Activity & Stats
 
+<div align="center">
+
 <table>
   <tr>
-    <td>
-      <img src="https://github-readme-stats.vercel.app/api?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false" />
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false" width="100%"/>
     </td>
-    <td>
-      <img src="https://nirzak-streak-stats.vercel.app/?user=rahulrameshm0&theme=dark&hide_border=false" />
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" />
+    <td align="center" width="50%">
+      <img src="https://nirzak-streak-stats.vercel.app/?user=rahulrameshm0&theme=dark&hide_border=false" width="100%"/>
     </td>
   </tr>
   <tr>
-    <td colspan="2">
-      <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" />
+    <td colspan="2" align="center">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" width="60%" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" width="80%" />
     </td>
   </tr>
 </table>
+
+</div>
 
 
 
