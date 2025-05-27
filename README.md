@@ -38,7 +38,6 @@
     <td align="center" width="50%">
 <!--         <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" width="90%" /> -->
         <img src="https://![Leetcode Stats](https://leetcard.jacoblin.cool/Rahul)" width="90%" />
-        
     </td>
   </tr>
 </table>
