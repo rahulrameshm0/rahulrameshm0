@@ -1,6 +1,6 @@
 👋 Hi, I’m Rahul
 
-💻  I'm a self-taught Python Full-Stack Developer with hands-on experience in building web applications using Python, Django, HTML, CSS, JavaScript, and modern frameworks like 
+💻  I'm a self-taught Python Developer with hands-on experience in building web applications using Python, Django, HTML, CSS, JavaScript, and modern frameworks like 
     Tailwind and Bootstrap.
 
 🌐 I’ve developed both frontend and backend components of real-world projects, and I’m passionate about creating clean, responsive, and user-friendly interfaces.
