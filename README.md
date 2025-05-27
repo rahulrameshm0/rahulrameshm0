@@ -24,18 +24,18 @@
 
 <table>
   <tr>
-    <td align="center" width="50%">
+    <td align="center">
       <img src="https://github-readme-stats.vercel.app/api?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false" width="90%"/>
     </td>
-    <td align="center" width="50%">
+    <td align="center">
       <img src="https://nirzak-streak-stats.vercel.app/?user=rahulrameshm0&theme=dark&hide_border=false" width="90%"/>
     </td>
   </tr>
   <tr>
-    <td align="center" width="50%">
+    <td align="center">
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" width="90%" />
     </td>
-    <td align="center" width="50%">
+    <td align="center">
 <!--         <img src="https://leetcard.jacoblin.cool/OreF2LOBST?theme=dark&font=Karma&ext=activity" width="90%" /> -->
         <img src="https://leetcard.jacoblin.cool/OreF2LOBST"/>
     </td>
