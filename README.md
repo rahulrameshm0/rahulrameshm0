@@ -16,14 +16,6 @@
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/rahul-ramesh-86a564325/)  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:rahulrameshm98@gmail.com) 
-## 📈 Coding Activity & Stats
-
-<div align="center">
-
-<div align="center">
-
-
-
 ---
 [![](https://visitcount.itsvg.in/api?id=rahulrameshm0&icon=6&color=0)](https://visitcount.itsvg.in)
 
