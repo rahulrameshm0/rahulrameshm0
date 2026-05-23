@@ -1,14 +1,12 @@
-👋 Hi, I'm **Rahul**
+👋 Hi, I'm Rahul — a self-taught Python Developer who turns ideas into scalable, database-driven web applications.
 
-💻 I'm a **self-taught Python Developer** passionate about building clean, efficient, and scalable web applications. I specialize in **Python**, **Django**, **HTML**, **CSS**, **JavaScript**, and modern frameworks like **Tailwind CSS** and **Bootstrap**.
+💻 I specialize in building full-stack systems using Python, Django, and JavaScript — covering everything from secure user authentication and dynamic CRUD interfaces to RESTful API integration and responsive front-ends with Tailwind CSS and Bootstrap.
 
-🌐 I’ve worked on both the **frontend** and **backend** of real-world projects — from crafting responsive UI designs to implementing CRUD functionality and database-driven systems. I also enjoy doing **data scraping** to collect and analyze useful information from the web.
+🔍 I've also developed web scraping pipelines to extract, clean, and analyze real-world data — adding a practical data layer to my backend skill set.
 
-⚙️ I’m currently learning **FastAPI** and diving deeper into **backend architecture**, **API development**, and **database design**, aiming to become a confident **Full-Stack Developer**.
+⚙️ Currently deepening my expertise in FastAPI, API architecture, and scalable backend design — with a clear goal of delivering production-grade systems end to end.
 
-🚀 I love exploring new technologies, solving problems through code, and continuously improving my development skills through hands-on projects.
-
-📫 Check out my repositories to see my work — I’m always open to feedback, collaboration, and new opportunities!
+📬 I'm actively seeking internship opportunities, freelance projects, and collaborations. Browse my repositories to see real-world implementations — and reach out if you'd like to work together.
 
 
 # 💻 Tech Stack:
