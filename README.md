@@ -1,4 +1,4 @@
-👋 Hi, I'm Rahul — a Python Developer focused on building scalable backend systems and full-stack web applications.
+👋 Hi, I'm Rahul — A Python Developer focused on building scalable backend systems and full-stack web applications.
 
 💻 I work primarily with Python, Django, JavaScript, and SQL to develop production-oriented applications with clean architecture, secure authentication, REST APIs, and database-driven functionality. I enjoy solving backend problems, designing efficient workflows, and building systems that are maintainable and scalable.
 
