@@ -1,12 +1,16 @@
-👋 Hi, I'm Rahul — a self-taught Python Developer who turns ideas into scalable, database-driven web applications.
+👋 Hi, I'm Rahul — a Python Developer focused on building scalable backend systems and full-stack web applications.
 
-💻 I specialize in building full-stack systems using Python, Django, and JavaScript — covering everything from secure user authentication and dynamic CRUD interfaces to RESTful API integration and responsive front-ends with Tailwind CSS and Bootstrap.
+💻 I work primarily with Python, Django, JavaScript, and SQL to develop production-oriented applications with clean architecture, secure authentication, REST APIs, and database-driven functionality. I enjoy solving backend problems, designing efficient workflows, and building systems that are maintainable and scalable.
 
-🔍 I've also developed web scraping pipelines to extract, clean, and analyze real-world data — adding a practical data layer to my backend skill set.
+⚡ My experience includes developing full-stack applications with responsive frontends using Tailwind CSS and Bootstrap, while handling backend logic, database management, API integration, and deployment workflows.
 
-⚙️ Currently deepening my expertise in FastAPI, API architecture, and scalable backend design — with a clear goal of delivering production-grade systems end to end.
+🔍 I also build web scraping and automation solutions for extracting, processing, and structuring real-world data using Python-based tools and frameworks.
 
-📬 I'm actively seeking internship opportunities, freelance projects, and collaborations. Browse my repositories to see real-world implementations — and reach out if you'd like to work together.
+🛠 Currently expanding my expertise in FastAPI, scalable API design, asynchronous programming, and software engineering concepts including system design, optimization, and performance.
+
+📚 Alongside development, I actively improve my understanding of data structures, algorithms, backend architecture, and version control workflows with Git.
+
+📬 I'm open to Python Developer internships, backend engineering opportunities, freelance work, and collaborations. Explore my repositories to see projects, experiments, and real-world implementations.
 
 
 # 💻 Tech Stack:
