@@ -39,30 +39,48 @@ Feel free to explore my repositories for real-world implementations, experiments
 
 ### 🛠️ Tech Stack
 
-**Languages & Core**
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
-**Backend & Frameworks**
-![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
-
-**Databases**
-![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-
-**Frontend & Styling**
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
-
-**Tools & Deployment**
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
-![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white)
+<table>
+  <tr>
+    <td width="180"><strong>Languages & Core</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
+      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
+      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
+      <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
+    </td>
+  </tr>
+  <tr>
+    <td width="180"><strong>Backend & Frameworks</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" />
+      <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" />
+    </td>
+  </tr>
+  <tr>
+    <td width="180"><strong>Databases</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" />
+      <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" />
+    </td>
+  </tr>
+  <tr>
+    <td width="180"><strong>Frontend & Styling</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" />
+      <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" />
+    </td>
+  </tr>
+  <tr>
+    <td width="180"><strong>Tools & Deployment</strong></td>
+    <td>
+      <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" />
+      <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+      <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
+      <img src="https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white" />
+      <img src="https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white" />
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -72,8 +90,10 @@ Feel free to explore my repositories for real-world implementations, experiments
   <img src="https://github-readme-stats.vercel.app/api?username=rahulrameshm0&show_icons=true&theme=default" alt="Rahul's GitHub stats" />
 </p>
 
+<p align="center">
+  <img src="https://visitcount.itsvg.in/api?id=rahulrameshm0&icon=6&color=0" alt="Profile views" />
+</p>
+
 ---
 
 <p align="center"><i>📬 Let's connect — open to internships, backend engineering roles, and freelance collaborations.</i></p>
-
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
