@@ -72,10 +72,6 @@ Feel free to explore my repositories for real-world implementations, experiments
   <img src="https://github-readme-stats.vercel.app/api?username=rahulrameshm0&show_icons=true&theme=default" alt="Rahul's GitHub stats" />
 </p>
 
-<p align="center">
-  <img src="https://visitcount.itsvg.in/api?id=rahulrameshm0&icon=6&color=0" alt="Profile views" />
-</p>
-
 ---
 
 <p align="center"><i>📬 Let's connect — open to internships, backend engineering roles, and freelance collaborations.</i></p>
