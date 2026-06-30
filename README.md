@@ -86,9 +86,7 @@ Feel free to explore my repositories for real-world implementations, experiments
 
 ### 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rahulrameshm0&show_icons=true&theme=default" alt="Rahul's GitHub stats" />
-</p>
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=dark)
 
 ---
 
