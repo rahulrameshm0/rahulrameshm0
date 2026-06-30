@@ -85,9 +85,9 @@ Feel free to explore my repositories for real-world implementations, experiments
 
 
 ### 📊 GitHub Stats
-<div align="center"> 
+---
   ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&theme=dark&langs_count=8)
-</div>
+---
 
 
 
