@@ -82,7 +82,7 @@ Feel free to explore my repositories for real-world implementations, experiments
   </tr>
 </table>
 
----
+
 
 ### 📊 GitHub Stats
 <div align="center"> 
@@ -90,6 +90,6 @@ Feel free to explore my repositories for real-world implementations, experiments
 </div>
 
 
----
+
 
 <p align="center"><i>📬 Let's connect — open to internships, backend engineering roles, and freelance collaborations.</i></p>
