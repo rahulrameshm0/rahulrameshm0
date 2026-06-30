@@ -86,8 +86,9 @@ Feel free to explore my repositories for real-world implementations, experiments
 
 ### 📊 Most Language Used
 ---
+<div align="center">
   ![Top Languages](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=rahulrameshm0&theme=dark&langs_count=5)
-  
+<div/>
 ---
 
 
