@@ -14,13 +14,14 @@
 
 ### 🧭 About Me
 
-I'm a Python Developer focused on building **scalable, production-oriented backend systems** and full-stack web applications. I work primarily with **Python, Django, JavaScript, and SQL**, designing clean architecture, secure authentication systems, REST APIs, and database-driven applications.
+I'm a **Software Engineer** focused on building **scalable, production-oriented software systems** and full-stack web applications. I work primarily with **Python, Django, JavaScript, and SQL**, designing clean architecture, secure authentication systems, REST APIs, and database-driven applications.
 
 My work spans the full development lifecycle — from backend logic and database design to responsive frontends built with **Tailwind CSS** and **Bootstrap**, along with deployment workflows that get applications into production reliably.
 
 I also build **web scraping and automation solutions** in Python for extracting, processing, and structuring real-world data.
 
 Currently, I'm deepening my expertise in:
+
 - **FastAPI** and scalable API design
 - **Asynchronous programming**
 - **System design, performance, and optimization**
@@ -29,9 +30,11 @@ Currently, I'm deepening my expertise in:
 ### 💼 What I'm Looking For
 
 I'm open to:
-- Python Developer / Backend Engineering **internships**
-- **Full-time** backend or full-stack roles
-- **Freelance** projects and collaborations
+
+- **Software Engineer** roles
+- **Backend Engineering** roles
+- **Full-Stack Developer** roles
+- **Python/Django** opportunities
 
 Feel free to explore my repositories for real-world implementations, experiments, and ongoing projects.
 
