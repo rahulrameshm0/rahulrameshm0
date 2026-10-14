@@ -1,4 +1,4 @@
-<h1 align="center">Hi, I'm Rahul Ramesh 👋</h1>
+<h1 align="center">Hi, I am Rahul Ramesh 👋</h1>
 <h3 align="center">Software Engineer | Backend Engineering & Full-Stack Web Applications</h3>
 
 <p align="center">
