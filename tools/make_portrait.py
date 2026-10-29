@@ -25,7 +25,7 @@ mode=sys.argv[11] if len(sys.argv)>11 else 'ascii'
 binary=mode=='binary'
 if mode=='letters':
     # Glyphs ordered light→heavy, like the reference video's portrait.
-    ramp=" .'`,:;!|ijlpkgNMW@"
+    ramp=" .'`,:;!|~^*=[]jilrnwkpgmhHM%N@"
 out=[]
 for r in range(rows):
     line=[]
