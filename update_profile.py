@@ -9,7 +9,6 @@ import calendar
 from datetime import datetime, timezone
 from html import escape
 import json
-import math
 import os
 from pathlib import Path
 import time
@@ -93,47 +92,9 @@ def uptime(created):
         years-=1
     return f'{years} years, {months} months, {days} days'
 
-def ascii_portrait(cols=57,rows=40):
-    """Downsample portrait.json tones into (char, tone) cells; strong edges become / \\ | _ strokes."""
-    data=json.loads((ROOT/'portrait.json').read_text())
-    width,height=data['width'],data['height']
-    tones=[]
-    for runs in data['rows']:
-        row=[]
-        for digits,level in runs:
-            row+=[0 if ch==' ' else level for ch in digits]
-        tones.append(row)
-    def sample(r,c):
-        ys=range(int(r*height/rows),max(int(r*height/rows)+1,int((r+1)*height/rows)))
-        xs=range(int(c*width/cols),max(int(c*width/cols)+1,int((c+1)*width/cols)))
-        values=[tones[y][x] for y in ys for x in xs]
-        lit=[v for v in values if v]
-        return (sum(lit)/len(lit)/19) if len(lit)*2>=len(values) else 0
-    grid=[[sample(r,c) for c in range(cols)] for r in range(rows)]
-    # Rank-equalise lit tones so the bright face spreads across the whole ramp.
-    lit=sorted(t for line in grid for t in line if t)
-    rank=lambda t: sum(v<t for v in lit)/len(lit)
-    cache={}
-    at=lambda r,c: grid[min(rows-1,max(0,r))][min(cols-1,max(0,c))]
-    ramp=" :;~-=+*xao#%&@"
-    cells=[]
-    for r in range(rows):
-        line=[]
-        for c in range(cols):
-            tone=grid[r][c]
-            if not tone:
-                line.append((' ',0))
-                continue
-            gx=at(r,c+1)-at(r,c-1)
-            gy=at(r+1,c)-at(r-1,c)
-            if math.hypot(gx,gy)>.45:
-                angle=(math.degrees(math.atan2(gy,gx))+180)%180
-                char='|' if angle<22.5 or angle>=157.5 else '/' if angle<67.5 else '_' if angle<112.5 else '\\'
-            else:
-                char=ramp[min(len(ramp)-1,max(1,int(cache.setdefault(tone,rank(tone))*len(ramp))))]
-            line.append((char,tone))
-        cells.append(line)
-    return cells
+def ascii_portrait():
+    """(char, tone) cells generated from the avatar photo by tools/make_portrait.py."""
+    return json.loads((ROOT/'portrait.json').read_text())['cells']
 
 def render(profile,repos,extra,mobile=False):
     width,height=(820,1420) if mobile else (1200,695)
@@ -146,21 +107,21 @@ def render(profile,repos,extra,mobile=False):
     bg='#161b22';ink='#c9d1d9';key='#ffa657';dots='#616e7f';plus='#3fb950';minus='#f85149'
     bits=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
           '<title id="title">Rahul Ramesh — GitHub neofetch profile</title>',
-          '<desc id="desc">An ASCII-art portrait beside neofetch-style rows listing Rahul’s system, languages, hobbies, contact links and live GitHub stats.</desc>',
+          '<desc id="desc">An ASCII-art portrait (made from the GitHub avatar) beside neofetch-style rows listing Rahul’s system, languages, hobbies, contact links and live GitHub stats.</desc>',
           '<style>text{font-family:Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-variant-ligatures:none;white-space:pre}</style>',
           f'<rect width="{width}" height="{height}" rx="12" fill="{bg}"/>']
     def text(x,y,value,color=ink,size=fs,weight=400,extra_attr=''):
         bits.append(f'<text x="{x:.1f}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}" xml:space="preserve" {extra_attr}>{escape(str(value))}</text>')
     portrait=ascii_portrait()
-    psize=12 if mobile else 11.2
+    psize=9 if mobile else 8.6
     px=(width-len(portrait[0])*psize*.6)/2 if mobile else 22
     for i,line in enumerate(portrait):
         spans=[]
         for char,tone in line:
             # Brighter tones get lighter ink so the eyes and shadows still read.
-            color='#'+''.join(f'{round(a+(b-a)*(.55+.45*tone**1.3)):02x}' for a,b in [(22,230),(27,237),(34,243)])
+            color='#'+''.join(f'{round(a+(b-a)*(.3+.7*tone)):02x}' for a,b in [(22,230),(27,237),(34,243)])
             spans.append(f'<tspan fill="{color}">{escape(char)}</tspan>' if char!=' ' else ' ')
-        bits.append(f'<text x="{px:.1f}" y="{30+i*psize*1.42:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
+        bits.append(f'<text x="{px:.1f}" y="{26+i*psize*1.42:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
     y=40+shift
     def heading(label):
         nonlocal y
