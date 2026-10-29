@@ -1,5 +1,5 @@
 import json,sys,math
-# usage: make_ascii.py pixels.json cols rows x0 y0 x1 y1 k gamma > portrait.txt (char+tone per cell, JSON)
+# usage: make_portrait.py pixels.json cols rows x0 y0 x1 y1 k gamma ramp_gamma [binary] > portrait.json (char+tone per cell)
 d=json.load(open(sys.argv[1])); n=d['size']; G=d['gray']; M=d['mask']
 cols,rows=int(sys.argv[2]),int(sys.argv[3]); x0,y0,x1,y1=map(int,sys.argv[4:8]); k=float(sys.argv[8]); gam=float(sys.argv[9])
 cw,ch=(x1-x0)/cols,(y1-y0)/rows
@@ -21,12 +21,16 @@ def blur(r,c,R=2):
     return sum(v)/len(v)
 t2=[[None if t[r][c] is None else min(1,max(0,t[r][c]+k*(t[r][c]-blur(r,c))))**gam for c in range(cols)] for r in range(rows)]
 ramp=" .:-=+*#%@"
+binary=len(sys.argv)>11 and sys.argv[11]=='binary'
 out=[]
 for r in range(rows):
     line=[]
     for c in range(cols):
         v=t2[r][c]
         if v is None: line.append([' ',0]); continue
+        if binary:
+            # Every subject cell is a digit; tone (colour) carries the shading, bright cells lean to 0.
+            line.append([' ' if v<.08 else '0' if v>.5 else '1',round(v,3)]); continue
         # silhouette edge: neighbour outside the subject
         nb=lambda y,x: 0<=y<rows and 0<=x<cols and t2[y][x] is not None
         L,R_,U,D=nb(r,c-1),nb(r,c+1),nb(r-1,c),nb(r+1,c)

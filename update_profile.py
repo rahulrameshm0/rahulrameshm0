@@ -97,37 +97,42 @@ def ascii_portrait():
     return json.loads((ROOT/'portrait.json').read_text())['cells']
 
 def render(profile,repos,extra,mobile=False):
-    width,height=(820,1420) if mobile else (1200,695)
-    startx=24 if mobile else 432
+    width,height=(820,1600) if mobile else (1200,800)
+    startx=24 if mobile else 512
     right=width-24
-    shift=730 if mobile else 0
+    shift=830 if mobile else 0
     fs=17 if mobile else 16
     cell=fs*.6
     chars=int((right-startx)/cell)
     bg='#161b22';ink='#c9d1d9';key='#ffa657';dots='#616e7f';plus='#3fb950';minus='#f85149'
     bits=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
           '<title id="title">Rahul Ramesh — GitHub neofetch profile</title>',
-          '<desc id="desc">An ASCII-art portrait (made from the GitHub avatar) beside neofetch-style rows listing Rahul’s system, languages, hobbies, contact links and live GitHub stats.</desc>',
+          '<desc id="desc">A portrait drawn in binary digits (made from the GitHub avatar) beside neofetch-style rows listing Rahul’s system, languages, hobbies, contact links and live GitHub stats.</desc>',
           '<style>text{font-family:Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-variant-ligatures:none;white-space:pre}</style>',
           f'<rect width="{width}" height="{height}" rx="12" fill="{bg}"/>']
     def text(x,y,value,color=ink,size=fs,weight=400,extra_attr=''):
         bits.append(f'<text x="{x:.1f}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}" xml:space="preserve" {extra_attr}>{escape(str(value))}</text>')
     portrait=ascii_portrait()
-    psize=9 if mobile else 8.6
+    psize,lead=(5.3,4.9) if mobile else (5.2,4.8)
     px=(width-len(portrait[0])*psize*.6)/2 if mobile else 22
     for i,line in enumerate(portrait):
-        spans=[]
+        runs=[]
         for char,tone in line:
-            # Brighter tones get lighter ink so the eyes and shadows still read.
-            color='#'+''.join(f'{round(a+(b-a)*(.3+.7*tone)):02x}' for a,b in [(22,230),(27,237),(34,243)])
-            spans.append(f'<tspan fill="{color}">{escape(char)}</tspan>' if char!=' ' else ' ')
-        bits.append(f'<text x="{px:.1f}" y="{26+i*psize*1.42:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
+            # Brighter tones get lighter ink; the shading is what draws the face.
+            # Tones are bucketed so neighbouring digits share one <tspan>.
+            color=None if char==' ' else '#'+''.join(f'{round(a+(b-a)*(.1+.9*(round(tone*24)/24)**1.4)):02x}' for a,b in [(22,230),(27,237),(34,243)])
+            if runs and runs[-1][0]==color:
+                runs[-1][1]+=char
+            else:
+                runs.append([color,char])
+        spans=[text_run if color is None else f'<tspan fill="{color}">{text_run}</tspan>' for color,text_run in runs]
+        bits.append(f'<text x="{px:.1f}" y="{22+i*lead:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
     y=40+shift
     def heading(label):
         nonlocal y
         text(startx,y,label,ink,fs,700)
         bits.append(f'<path d="M{startx+(len(label)+1)*cell:.1f} {y-5} H{right}" stroke="{dots}" stroke-width="1.2"/>')
-        y+=30
+        y+=34
     def row(label,value):
         nonlocal y
         value=str(value)
@@ -135,10 +140,10 @@ def render(profile,repos,extra,mobile=False):
         text(startx,y,label,key,fs,600)
         text(startx+len(label)*cell,y,' '+'.'*count+' ',dots)
         text(right,y,value,ink,fs,400,'text-anchor="end"')
-        y+=30
+        y+=34
     def gap():
         nonlocal y
-        y+=18
+        y+=20
     original=[r for r in repos if not r['fork'] and r['owner']['login'].lower()==LOGIN.lower()]
     stars=sum(r['stargazers_count'] for r in original)
     heading('rahul@ramesh')
@@ -169,7 +174,7 @@ def render(profile,repos,extra,mobile=False):
         text(half,y,'|',dots)
         text(half+18,y,right_label,key,fs,600)
         text(right,y,right_value,ink,fs,400,'text-anchor="end"')
-        y+=30
+        y+=34
     contributed=f' {{Contributed: {extra["contributed"]}}}' if 'contributed' in extra else ''
     statpair('Repos:',f'{profile["public_repos"]}{contributed}','Stars:',f'{stars:,}')
     statpair('Commits:',f'{extra["commits"]:,}','Followers:',f'{profile["followers"]:,}')
