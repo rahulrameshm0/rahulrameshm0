@@ -107,21 +107,21 @@ def render(profile,repos,extra,mobile=False):
     bg='#161b22';ink='#c9d1d9';key='#ffa657';dots='#616e7f';plus='#3fb950';minus='#f85149'
     bits=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
           '<title id="title">Rahul Ramesh — GitHub neofetch profile</title>',
-          '<desc id="desc">An ASCII-art portrait (made from the GitHub avatar) beside neofetch-style rows listing Rahul’s system, languages, hobbies, contact links and live GitHub stats.</desc>',
+          '<desc id="desc">A square portrait drawn in binary digits (made from the GitHub avatar) beside neofetch-style rows listing Rahul’s system, languages, hobbies, contact links and live GitHub stats.</desc>',
           '<style>text{font-family:Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-variant-ligatures:none;white-space:pre}</style>',
           f'<rect width="{width}" height="{height}" rx="12" fill="{bg}"/>']
     def text(x,y,value,color=ink,size=fs,weight=400,extra_attr=''):
         bits.append(f'<text x="{x:.1f}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}" xml:space="preserve" {extra_attr}>{escape(str(value))}</text>')
     portrait=ascii_portrait()
     # Square block: cols*0.6*psize == rows*lead.
-    psize,lead=(12.4,16.6) if mobile else (11.94,16)
+    psize,lead=(6.7,6.7) if mobile else (6.4,6.4)
     px=(width-len(portrait[0])*psize*.6)/2 if mobile else 22
     for i,line in enumerate(portrait):
         runs=[]
         for char,tone in line:
             # Brighter tones get lighter ink; the shading is what draws the face.
             # Tones are bucketed so neighbouring digits share one <tspan>.
-            color=None if char==' ' else '#'+''.join(f'{round(a+(b-a)*(.62+.38*(round(tone*24)/24))):02x}' for a,b in [(22,230),(27,237),(34,243)])
+            color=None if char==' ' else '#'+''.join(f'{round(a+(b-a)*(.1+.9*(round(tone*24)/24)**1.4)):02x}' for a,b in [(22,230),(27,237),(34,243)])
             if runs and runs[-1][0]==color:
                 runs[-1][1]+=char
             else:
