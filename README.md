@@ -35,4 +35,4 @@ Explore my repositories for implementations, experiments, and ongoing projects. 
 
 </details>
 
-<sub>Public GitHub stats refresh daily. Python repos counts original public repositories whose primary language is Python; stars earned excludes forks.</sub>
+<sub>Public GitHub stats snapshot. Python repos counts original public repositories whose primary language is Python; stars earned excludes forks.</sub>
