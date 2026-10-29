@@ -1,5 +1,5 @@
 import json,sys,math
-# usage: make_portrait.py pixels.json cols rows x0 y0 x1 y1 k gamma ramp_gamma [binary] > portrait.json (char+tone per cell)
+# usage: make_portrait.py pixels.json cols rows x0 y0 x1 y1 k gamma ramp_gamma [ascii|binary|letters] > portrait.json (char+tone per cell)
 d=json.load(open(sys.argv[1])); n=d['size']; G=d['gray']; M=d['mask']
 cols,rows=int(sys.argv[2]),int(sys.argv[3]); x0,y0,x1,y1=map(int,sys.argv[4:8]); k=float(sys.argv[8]); gam=float(sys.argv[9])
 cw,ch=(x1-x0)/cols,(y1-y0)/rows
@@ -21,7 +21,11 @@ def blur(r,c,R=2):
     return sum(v)/len(v)
 t2=[[None if t[r][c] is None else min(1,max(0,t[r][c]+k*(t[r][c]-blur(r,c))))**gam for c in range(cols)] for r in range(rows)]
 ramp=" .:-=+*#%@"
-binary=len(sys.argv)>11 and sys.argv[11]=='binary'
+mode=sys.argv[11] if len(sys.argv)>11 else 'ascii'
+binary=mode=='binary'
+if mode=='letters':
+    # Glyphs ordered light→heavy, like the reference video's portrait.
+    ramp=" .'`,:;!|ijlpkgNMW@"
 out=[]
 for r in range(rows):
     line=[]
@@ -34,7 +38,8 @@ for r in range(rows):
         # silhouette edge: neighbour outside the subject
         nb=lambda y,x: 0<=y<rows and 0<=x<cols and t2[y][x] is not None
         L,R_,U,D=nb(r,c-1),nb(r,c+1),nb(r-1,c),nb(r+1,c)
-        if not U and (L and R_): ch='_' 
+        if mode=='letters': ch=ramp[min(len(ramp)-1,int(v**float(sys.argv[10])*len(ramp)))]
+        elif not U and (L and R_): ch='_' 
         elif not L and not R_: ch='|'
         elif not L: ch='/' if not U else ('\\' if not D else '|')
         elif not R_: ch='\\' if not U else ('/' if not D else '|')
