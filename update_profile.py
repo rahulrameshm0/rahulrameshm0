@@ -97,11 +97,11 @@ def ascii_portrait():
     return json.loads((ROOT/'portrait.json').read_text())['cells']
 
 def render(profile,repos,extra,mobile=False):
-    width,height=(820,1600) if mobile else (1200,800)
-    startx=24 if mobile else 512
+    width,height=(820,1290) if mobile else (1200,630)
+    startx=24 if mobile else 624
     right=width-24
-    shift=830 if mobile else 0
-    fs=17 if mobile else 16
+    shift=650 if mobile else 0
+    fs=17 if mobile else 14.6
     cell=fs*.6
     chars=int((right-startx)/cell)
     bg='#161b22';ink='#c9d1d9';key='#ffa657';dots='#616e7f';plus='#3fb950';minus='#f85149'
@@ -113,7 +113,8 @@ def render(profile,repos,extra,mobile=False):
     def text(x,y,value,color=ink,size=fs,weight=400,extra_attr=''):
         bits.append(f'<text x="{x:.1f}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}" xml:space="preserve" {extra_attr}>{escape(str(value))}</text>')
     portrait=ascii_portrait()
-    psize,lead=(12.6,16.8) if mobile else (12.4,16.6)
+    # Square block: cols*0.6*psize == rows*lead.
+    psize,lead=(12.4,16.6) if mobile else (11.94,16)
     px=(width-len(portrait[0])*psize*.6)/2 if mobile else 22
     for i,line in enumerate(portrait):
         runs=[]
@@ -126,13 +127,13 @@ def render(profile,repos,extra,mobile=False):
             else:
                 runs.append([color,char])
         spans=[text_run if color is None else f'<tspan fill="{color}">{text_run}</tspan>' for color,text_run in runs]
-        bits.append(f'<text x="{px:.1f}" y="{22+i*lead:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
+        bits.append(f'<text x="{px:.1f}" y="{34+i*lead:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
     y=40+shift
     def heading(label):
         nonlocal y
         text(startx,y,label,ink,fs,700)
         bits.append(f'<path d="M{startx+(len(label)+1)*cell:.1f} {y-5} H{right}" stroke="{dots}" stroke-width="1.2"/>')
-        y+=34
+        y+=28
     def row(label,value):
         nonlocal y
         value=str(value)
@@ -140,10 +141,10 @@ def render(profile,repos,extra,mobile=False):
         text(startx,y,label,key,fs,600)
         text(startx+len(label)*cell,y,' '+'.'*count+' ',dots)
         text(right,y,value,ink,fs,400,'text-anchor="end"')
-        y+=34
+        y+=28
     def gap():
         nonlocal y
-        y+=20
+        y+=16
     original=[r for r in repos if not r['fork'] and r['owner']['login'].lower()==LOGIN.lower()]
     stars=sum(r['stargazers_count'] for r in original)
     heading('rahul@ramesh')
@@ -174,7 +175,7 @@ def render(profile,repos,extra,mobile=False):
         text(half,y,'|',dots)
         text(half+18,y,right_label,key,fs,600)
         text(right,y,right_value,ink,fs,400,'text-anchor="end"')
-        y+=34
+        y+=28
     contributed=f' {{Contributed: {extra["contributed"]}}}' if 'contributed' in extra else ''
     statpair('Repos:',f'{profile["public_repos"]}{contributed}','Stars:',f'{stars:,}')
     statpair('Commits:',f'{extra["commits"]:,}','Followers:',f'{profile["followers"]:,}')
