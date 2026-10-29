@@ -145,7 +145,7 @@ def main():
     profile,repos=load_data(args.data_dir)
     if profile['login'].lower()!=LOGIN.lower():
         raise ValueError('Unexpected user')
-    for filename,mobile in [('terminal.svg',False),('terminal-mobile.svg',True)]:
+    for filename,mobile in [('profile.svg',False),('profile-mobile.svg',True)]:
         (ROOT/filename).write_text(render(profile,repos,mobile),encoding='utf-8')
     print('Rendered neofetch-style profile')
 
