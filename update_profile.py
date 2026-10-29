@@ -72,15 +72,20 @@ def render(profile,repos,mobile=False):
     ink='#cee8ed';accent='#e9ad99';dots='#506273'
     bits=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
           '<title id="title">Rahul Ramesh — GitHub terminal profile</title>',
-          '<desc id="desc">A background-free ASCII portrait beside dotted-leader rows listing Rahul’s profile, programming stack, learning interests, contact links and public GitHub stats.</desc>',
+          '<desc id="desc">A background-free portrait made only from binary digits beside dotted-leader rows listing Rahul’s profile, programming stack, learning interests, contact links and public GitHub stats.</desc>',
           '<style>text{font-family:Menlo,Consolas,"Liberation Mono",monospace;font-variant-ligatures:none}</style>',
           f'<rect width="{width}" height="{height}" fill="#101b2b"/>']
     def text(x,y,value,color=ink,size=fs,weight=600,extra=''):
         bits.append(f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}" {extra}>{escape(str(value))}</text>')
     portrait=json.loads((ROOT/'portrait.json').read_text())
-    px=237 if mobile else 20
-    for i,row in enumerate(portrait):
-        text(px,34+i*8.5,row,ink,9,500,'xml:space="preserve" aria-hidden="true"')
+    px=221 if mobile else 8
+    for i,runs in enumerate(portrait['rows']):
+        spans=[]
+        for digits,level in runs:
+            tone=level/19
+            color='#'+''.join(f'{round(a+(b-a)*tone):02x}' for a,b in [(16,215),(27,237),(43,243)])
+            spans.append(f'<tspan fill="{color}">{escape(digits)}</tspan>')
+        bits.append(f'<text x="{px}" y="{34+i*3.9:.1f}" font-size="5.8" font-weight="600" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
     def heading(y,label):
         y+=shift
         text(startx,y,label,ink,fs,700)
@@ -145,7 +150,7 @@ def main():
     profile,repos=load_data(args.data_dir)
     if profile['login'].lower()!=LOGIN.lower():
         raise ValueError('Unexpected user')
-    for filename,mobile in [('profile.svg',False),('profile-mobile.svg',True)]:
+    for filename,mobile in [('profile-binary.svg',False),('profile-binary-mobile.svg',True)]:
         (ROOT/filename).write_text(render(profile,repos,mobile),encoding='utf-8')
     print('Rendered neofetch-style profile')
 
