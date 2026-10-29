@@ -93,7 +93,7 @@ def uptime(created):
         years-=1
     return f'{years} years, {months} months, {days} days'
 
-def ascii_portrait(cols=60,rows=41):
+def ascii_portrait(cols=57,rows=40):
     """Downsample portrait.json tones into (char, tone) cells; strong edges become / \\ | _ strokes."""
     data=json.loads((ROOT/'portrait.json').read_text())
     width,height=data['width'],data['height']
@@ -115,7 +115,7 @@ def ascii_portrait(cols=60,rows=41):
     rank=lambda t: sum(v<t for v in lit)/len(lit)
     cache={}
     at=lambda r,c: grid[min(rows-1,max(0,r))][min(cols-1,max(0,c))]
-    ramp=" .'`,:;~-=+*xao#%&@"
+    ramp=" :;~-=+*xao#%&@"
     cells=[]
     for r in range(rows):
         line=[]
@@ -136,10 +136,10 @@ def ascii_portrait(cols=60,rows=41):
     return cells
 
 def render(profile,repos,extra,mobile=False):
-    width,height=(820,1300) if mobile else (1200,610)
+    width,height=(820,1420) if mobile else (1200,695)
     startx=24 if mobile else 432
     right=width-24
-    shift=640 if mobile else 0
+    shift=730 if mobile else 0
     fs=17 if mobile else 16
     cell=fs*.6
     chars=int((right-startx)/cell)
@@ -152,21 +152,21 @@ def render(profile,repos,extra,mobile=False):
     def text(x,y,value,color=ink,size=fs,weight=400,extra_attr=''):
         bits.append(f'<text x="{x:.1f}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}" xml:space="preserve" {extra_attr}>{escape(str(value))}</text>')
     portrait=ascii_portrait()
-    psize=10.4 if mobile else 9.8
+    psize=12 if mobile else 11.2
     px=(width-len(portrait[0])*psize*.6)/2 if mobile else 22
     for i,line in enumerate(portrait):
         spans=[]
         for char,tone in line:
             # Brighter tones get lighter ink so the eyes and shadows still read.
-            color='#'+''.join(f'{round(a+(b-a)*(.25+.75*tone**2.2)):02x}' for a,b in [(22,201),(27,209),(34,217)])
+            color='#'+''.join(f'{round(a+(b-a)*(.55+.45*tone**1.3)):02x}' for a,b in [(22,230),(27,237),(34,243)])
             spans.append(f'<tspan fill="{color}">{escape(char)}</tspan>' if char!=' ' else ' ')
-        bits.append(f'<text x="{px:.1f}" y="{24+i*psize*1.42:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
-    y=34+shift
+        bits.append(f'<text x="{px:.1f}" y="{30+i*psize*1.42:.1f}" font-size="{psize}" font-weight="700" xml:space="preserve" aria-hidden="true">{"".join(spans)}</text>')
+    y=40+shift
     def heading(label):
         nonlocal y
         text(startx,y,label,ink,fs,700)
         bits.append(f'<path d="M{startx+(len(label)+1)*cell:.1f} {y-5} H{right}" stroke="{dots}" stroke-width="1.2"/>')
-        y+=27
+        y+=30
     def row(label,value):
         nonlocal y
         value=str(value)
@@ -174,10 +174,10 @@ def render(profile,repos,extra,mobile=False):
         text(startx,y,label,key,fs,600)
         text(startx+len(label)*cell,y,' '+'.'*count+' ',dots)
         text(right,y,value,ink,fs,400,'text-anchor="end"')
-        y+=27
+        y+=30
     def gap():
         nonlocal y
-        y+=13
+        y+=18
     original=[r for r in repos if not r['fork'] and r['owner']['login'].lower()==LOGIN.lower()]
     stars=sum(r['stargazers_count'] for r in original)
     heading('rahul@ramesh')
@@ -185,7 +185,7 @@ def render(profile,repos,extra,mobile=False):
     row('Uptime:',uptime(profile['created_at']))
     row('Host:','Novoxedtech')
     row('Kernel:','Software Engineer')
-    row('IDE:','VS Code')
+    row('IDE:','VS Code, PyCharm')
     gap()
     row('Languages.Programming:','Python, JavaScript, TypeScript, SQL')
     row('Languages.Computer:','HTML, CSS, JSON, Markdown, YAML')
@@ -208,7 +208,7 @@ def render(profile,repos,extra,mobile=False):
         text(half,y,'|',dots)
         text(half+18,y,right_label,key,fs,600)
         text(right,y,right_value,ink,fs,400,'text-anchor="end"')
-        y+=27
+        y+=30
     contributed=f' {{Contributed: {extra["contributed"]}}}' if 'contributed' in extra else ''
     statpair('Repos:',f'{profile["public_repos"]}{contributed}','Stars:',f'{stars:,}')
     statpair('Commits:',f'{extra["commits"]:,}','Followers:',f'{profile["followers"]:,}')
